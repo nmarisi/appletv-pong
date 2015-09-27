@@ -7,7 +7,7 @@
 		<key>AppleTVPong.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>4D337DB31BB851AB0078D96C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D337E021BB864470078D96C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D337E181BB864470078D96C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D337E231BB864480078D96C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
