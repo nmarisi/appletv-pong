@@ -25,6 +25,8 @@
 		4D337E131BB864470078D96C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D337E121BB864470078D96C /* Assets.xcassets */; };
 		4D337E1E1BB864470078D96C /* AppleTVPong2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337E1D1BB864470078D96C /* AppleTVPong2Tests.swift */; };
 		4D337E291BB864480078D96C /* AppleTVPong2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337E281BB864480078D96C /* AppleTVPong2UITests.swift */; };
+		4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */; };
+		4D965FB01BB99779006B15AE /* CGPoint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		4D337E241BB864480078D96C /* AppleTVPong2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPong2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D337E281BB864480078D96C /* AppleTVPong2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVPong2UITests.swift; sourceTree = "<group>"; };
 		4D337E2A1BB864480078D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Math.swift"; path = "Extensions/CGVector+Math.swift"; sourceTree = "<group>"; };
+		4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Convenience.swift"; path = "Extensions/CGPoint+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		4D337D941BB851AB0078D96C /* AppleTVPong */ = {
 			isa = PBXGroup;
 			children = (
+				4D965FAC1BB988C5006B15AE /* Extensions */,
 				4D337D951BB851AB0078D96C /* AppDelegate.swift */,
 				4D337D971BB851AB0078D96C /* GameScene.sks */,
 				4D337D991BB851AB0078D96C /* GameScene.swift */,
@@ -227,6 +232,15 @@
 				4D337E2A1BB864480078D96C /* Info.plist */,
 			);
 			path = AppleTVPong2UITests;
+			sourceTree = "<group>";
+		};
+		4D965FAC1BB988C5006B15AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */,
+				4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,8 +467,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D337D9A1BB851AB0078D96C /* GameScene.swift in Sources */,
+				4D965FB01BB99779006B15AE /* CGPoint+Convenience.swift in Sources */,
 				4D337D9C1BB851AB0078D96C /* GameViewController.swift in Sources */,
 				4D337D961BB851AB0078D96C /* AppDelegate.swift in Sources */,
+				4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +836,7 @@
 				4D337E2C1BB864480078D96C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D337E321BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2Tests" */ = {
 			isa = XCConfigurationList;
@@ -828,6 +845,7 @@
 				4D337E2E1BB864480078D96C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D337E331BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2UITests" */ = {
 			isa = XCConfigurationList;
@@ -836,6 +854,7 @@
 				4D337E301BB864480078D96C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

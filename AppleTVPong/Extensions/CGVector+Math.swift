@@ -8,6 +8,10 @@
 
 import SpriteKit
 
+func + (left: CGVector, right: CGPoint) -> CGPoint {
+    return CGPoint(x: left.dx + right.x, y: left.dy + right.y)
+}
+
 func + (left: CGVector, right: CGVector) -> CGVector {
     return CGVector(dx: left.dx + right.dx, dy: left.dy + right.dy)
 }

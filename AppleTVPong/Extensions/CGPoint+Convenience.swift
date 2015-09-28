@@ -6,4 +6,10 @@
 //  Copyright © 2015 TechBrewers. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+extension CGPoint {
+    static func infinite() -> CGPoint {
+        return CGPointMake(CGFloat(CFloat.infinity), CGFloat(CGFloat.infinity))
+    }
+}
