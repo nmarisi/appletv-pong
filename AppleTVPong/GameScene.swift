@@ -46,8 +46,6 @@ class GameScene: SKScene {
             return
         }
         
-        
-        
         initialTouch = touch.locationInNode(self)
    
     }
@@ -114,18 +112,7 @@ class GameScene: SKScene {
         
         // calc final Y point
         let yIntersec = upperFinalDeterminant / lowerFinalDeterminant
-        
-        //print("p1: \(p1), p2: \(p2)")
- /*
-        // If these conditions are true, there is no intersection
-        if xIntersec < min(p1.x, p2.x) || xIntersec > max(p1.x, p2.x) {
-            return  nil
-        }
-        
-        if xIntersec <= min(p3.x, p4.x) || xIntersec > max(p3.x, p4.x) {
-            return  nil
-        }
-   */
+
         return CGPointMake(xIntersec, yIntersec)
         
     }
@@ -149,27 +136,15 @@ class GameScene: SKScene {
             
             let newPosition = CGPointMake(player2.position.x, abs(intersection.y))
             movePlayer(player2, yLocation: abs(intersection.y), animated: true)
-            //let moveAction = SKAction.moveTo(newPosition, duration: 0.5)
-            //player2.runAction(moveAction)
-            
-            
-            
             
          } else {
-            //infinite
+            //infinite, so no intersection.
         }
     }
     
     //MARK: Convenience functions
     func movePlayer(player: SKSpriteNode, yLocation: CGFloat, animated: Bool) {
-       
-        // Avoid moving the player outside of the screen
-//        if yLocation > (view!.frame.size.width / 2) + (player1.size.width  / 2) ||
-//            yLocation < boundaryHeight + (player1.size.width / 2) {
-//            return
-//        }
-//        
-        
+
         if yLocation > view!.frame.size.height - boundaryHeight  ||
             yLocation < boundaryHeight {
                 return
