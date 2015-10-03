@@ -15,7 +15,7 @@ class GameScene: SKScene {
     var ball: SKSpriteNode!
     var initialTouch:CGPoint!
     
-    let boundaryHeight:CGFloat = 40
+    let boundaryHeight:CGFloat = 60
     
     override func didMoveToView(view: SKView) {
         
@@ -25,7 +25,7 @@ class GameScene: SKScene {
         ball = self.childNodeWithName("Ball") as! SKSpriteNode
         
         //ball.physicsBody!.applyImpulse(CGVectorMake(1000, -10))
-        ball.physicsBody?.velocity = CGVectorMake(750, 550)
+        ball.physicsBody?.velocity = CGVectorMake(1550, 250)
         ball.physicsBody?.usesPreciseCollisionDetection = true
         
         
@@ -62,10 +62,6 @@ class GameScene: SKScene {
         
         let player1Y = player1.position.y + (touchLocation.y - previousLocation.y)
         movePlayer(player1, yLocation: player1Y, animated: false)
-        
-
-        
-    
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -119,7 +115,7 @@ class GameScene: SKScene {
         // calc final Y point
         let yIntersec = upperFinalDeterminant / lowerFinalDeterminant
         
-        print("p1: \(p1), p2: \(p2)")
+        //print("p1: \(p1), p2: \(p2)")
  /*
         // If these conditions are true, there is no intersection
         if xIntersec < min(p1.x, p2.x) || xIntersec > max(p1.x, p2.x) {
@@ -145,8 +141,9 @@ class GameScene: SKScene {
 
         let p1 = ball.position
         let p2 = ballDestination + ball.position
-        let p3 = CGPointMake(frame.size.width, frame.size.height - boundaryHeight )
-        let p4 = CGPointMake(frame.size.width, 0 + boundaryHeight)
+        // Y line intersection is in front of player2
+        let p3 = CGPointMake(frame.size.width - player2.frame.size.width, frame.size.height - boundaryHeight )
+        let p4 = CGPointMake(frame.size.width - player2.frame.size.width, 0 + boundaryHeight)
         
         if let intersection = intersectionSeg1Seg2(p1: p1, p2: p2, p3: p3, p4: p4) {
             
@@ -167,16 +164,24 @@ class GameScene: SKScene {
     func movePlayer(player: SKSpriteNode, yLocation: CGFloat, animated: Bool) {
        
         // Avoid moving the player outside of the screen
-        if yLocation > (view!.frame.size.width / 2) + (player1.size.width  / 2) ||
-            yLocation < boundaryHeight + (player1.size.width / 2) {
-            return
+//        if yLocation > (view!.frame.size.width / 2) + (player1.size.width  / 2) ||
+//            yLocation < boundaryHeight + (player1.size.width / 2) {
+//            return
+//        }
+//        
+        
+        if yLocation > view!.frame.size.height - boundaryHeight  ||
+            yLocation < boundaryHeight {
+                return
         }
-        print(yLocation)
+        
+        //print("yLocation: \(yLocation)")
 
         let moveLocation = CGPointMake(player.position.x, yLocation)
         
         if animated {
-            let moveAction = SKAction.moveTo(moveLocation, duration: 0.5)
+            let moveAction = SKAction.moveTo(moveLocation, duration: 0.2)
+            player.runAction(moveAction)
         } else {
             player.position = moveLocation
         }
