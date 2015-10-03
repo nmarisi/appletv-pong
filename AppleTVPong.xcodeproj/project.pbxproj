@@ -35,20 +35,6 @@
 			remoteGlobalIDString = 4D337D911BB851AB0078D96C;
 			remoteInfo = AppleTVPong;
 		};
-		4D337E1A1BB864470078D96C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D337D8A1BB851AB0078D96C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D337E021BB864470078D96C;
-			remoteInfo = AppleTVPong2;
-		};
-		4D337E251BB864480078D96C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D337D8A1BB851AB0078D96C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D337E021BB864470078D96C;
-			remoteInfo = AppleTVPong2;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -67,9 +53,6 @@
 		4D337DB41BB851AB0078D96C /* AppleTVPongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVPongUITests.swift; sourceTree = "<group>"; };
 		4D337DBA1BB851AB0078D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D337E031BB864470078D96C /* AppleTVPong2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleTVPong2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D337E191BB864470078D96C /* AppleTVPong2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPong2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D337E241BB864480078D96C /* AppleTVPong2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPong2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Math.swift"; path = "Extensions/CGVector+Math.swift"; sourceTree = "<group>"; };
 		4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Convenience.swift"; path = "Extensions/CGPoint+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,27 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D337E001BB864470078D96C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E161BB864470078D96C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E211BB864480078D96C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -136,9 +98,6 @@
 				4D337D921BB851AB0078D96C /* AppleTVPong.app */,
 				4D337DA91BB851AB0078D96C /* AppleTVPongTests.xctest */,
 				4D337DB41BB851AB0078D96C /* AppleTVPongUITests.xctest */,
-				4D337E031BB864470078D96C /* AppleTVPong2.app */,
-				4D337E191BB864470078D96C /* AppleTVPong2Tests.xctest */,
-				4D337E241BB864480078D96C /* AppleTVPong2UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,59 +201,6 @@
 			productReference = 4D337DB41BB851AB0078D96C /* AppleTVPongUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		4D337E021BB864470078D96C /* AppleTVPong2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D337E311BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2" */;
-			buildPhases = (
-				4D337DFF1BB864470078D96C /* Sources */,
-				4D337E001BB864470078D96C /* Frameworks */,
-				4D337E011BB864470078D96C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AppleTVPong2;
-			productName = AppleTVPong2;
-			productReference = 4D337E031BB864470078D96C /* AppleTVPong2.app */;
-			productType = "com.apple.product-type.application";
-		};
-		4D337E181BB864470078D96C /* AppleTVPong2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D337E321BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2Tests" */;
-			buildPhases = (
-				4D337E151BB864470078D96C /* Sources */,
-				4D337E161BB864470078D96C /* Frameworks */,
-				4D337E171BB864470078D96C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4D337E1B1BB864470078D96C /* PBXTargetDependency */,
-			);
-			name = AppleTVPong2Tests;
-			productName = AppleTVPong2Tests;
-			productReference = 4D337E191BB864470078D96C /* AppleTVPong2Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4D337E231BB864480078D96C /* AppleTVPong2UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D337E331BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2UITests" */;
-			buildPhases = (
-				4D337E201BB864480078D96C /* Sources */,
-				4D337E211BB864480078D96C /* Frameworks */,
-				4D337E221BB864480078D96C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4D337E261BB864480078D96C /* PBXTargetDependency */,
-			);
-			name = AppleTVPong2UITests;
-			productName = AppleTVPong2UITests;
-			productReference = 4D337E241BB864480078D96C /* AppleTVPong2UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -315,17 +221,6 @@
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 4D337D911BB851AB0078D96C;
 					};
-					4D337E021BB864470078D96C = {
-						CreatedOnToolsVersion = 7.1;
-					};
-					4D337E181BB864470078D96C = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 4D337E021BB864470078D96C;
-					};
-					4D337E231BB864480078D96C = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 4D337E021BB864470078D96C;
-					};
 				};
 			};
 			buildConfigurationList = 4D337D8D1BB851AB0078D96C /* Build configuration list for PBXProject "AppleTVPong" */;
@@ -344,9 +239,6 @@
 				4D337D911BB851AB0078D96C /* AppleTVPong */,
 				4D337DA81BB851AB0078D96C /* AppleTVPongTests */,
 				4D337DB31BB851AB0078D96C /* AppleTVPongUITests */,
-				4D337E021BB864470078D96C /* AppleTVPong2 */,
-				4D337E181BB864470078D96C /* AppleTVPong2Tests */,
-				4D337E231BB864480078D96C /* AppleTVPong2UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -371,27 +263,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4D337DB21BB851AB0078D96C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E011BB864470078D96C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E171BB864470078D96C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E221BB864480078D96C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -429,27 +300,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D337DFF1BB864470078D96C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E151BB864470078D96C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D337E201BB864480078D96C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -462,16 +312,6 @@
 			isa = PBXTargetDependency;
 			target = 4D337D911BB851AB0078D96C /* AppleTVPong */;
 			targetProxy = 4D337DB51BB851AB0078D96C /* PBXContainerItemProxy */;
-		};
-		4D337E1B1BB864470078D96C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4D337E021BB864470078D96C /* AppleTVPong2 */;
-			targetProxy = 4D337E1A1BB864470078D96C /* PBXContainerItemProxy */;
-		};
-		4D337E261BB864480078D96C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4D337E021BB864470078D96C /* AppleTVPong2 */;
-			targetProxy = 4D337E251BB864480078D96C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -642,80 +482,6 @@
 			};
 			name = Release;
 		};
-		4D337E2B1BB864480078D96C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = AppleTVPong2/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4D337E2C1BB864480078D96C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = AppleTVPong2/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4D337E2D1BB864480078D96C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = AppleTVPong2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleTVPong2.app/AppleTVPong2";
-			};
-			name = Debug;
-		};
-		4D337E2E1BB864480078D96C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AppleTVPong2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleTVPong2.app/AppleTVPong2";
-			};
-			name = Release;
-		};
-		4D337E2F1BB864480078D96C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = AppleTVPong2UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AppleTVPong2;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		4D337E301BB864480078D96C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AppleTVPong2UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.techbrewers.AppleTVPong2UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AppleTVPong2;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -751,33 +517,6 @@
 			buildConfigurations = (
 				4D337DC41BB851AB0078D96C /* Debug */,
 				4D337DC51BB851AB0078D96C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D337E311BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D337E2B1BB864480078D96C /* Debug */,
-				4D337E2C1BB864480078D96C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D337E321BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D337E2D1BB864480078D96C /* Debug */,
-				4D337E2E1BB864480078D96C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D337E331BB864480078D96C /* Build configuration list for PBXNativeTarget "AppleTVPong2UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D337E2F1BB864480078D96C /* Debug */,
-				4D337E301BB864480078D96C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
