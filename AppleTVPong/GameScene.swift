@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func didMoveToView(view: SKView){
         self.physicsWorld.contactDelegate = self
+      physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         connectOutlets()
         createSceneContent(view)
         createBall()
@@ -35,7 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createBall() {
         ball = SKSpriteNode(imageNamed: "40Dot")
         ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
-        
+       ball.physicsBody = SKPhysicsBody(rectangleOfSize: ball.size)
         ball.physicsBody?.velocity = CGVectorMake(950, 250)
         ball.physicsBody?.usesPreciseCollisionDetection = true
         ball.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Ball
@@ -44,7 +45,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //ball.physicsBody?.dynamic = true
         ball.zPosition = 10
         addChild(ball)
-        ball.physicsBody?.applyImpulse(CGVectorMake(950, 250))
     }
     
     func createSceneContent(view: SKView) {
