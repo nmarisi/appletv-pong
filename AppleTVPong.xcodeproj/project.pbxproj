@@ -16,6 +16,8 @@
 		4D337DA31BB851AB0078D96C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D337DA21BB851AB0078D96C /* Assets.xcassets */; };
 		4D337DAE1BB851AB0078D96C /* AppleTVPongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DAD1BB851AB0078D96C /* AppleTVPongTests.swift */; };
 		4D337DB91BB851AB0078D96C /* AppleTVPongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */; };
+		4D72862C1BC0002000BB4F4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862B1BC0002000BB4F4E /* Constants.swift */; };
+		4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */; };
 		4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */; };
 		4D965FB01BB99779006B15AE /* CGPoint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		4D337DB41BB851AB0078D96C /* AppleTVPongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVPongUITests.swift; sourceTree = "<group>"; };
 		4D337DBA1BB851AB0078D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D72862B1BC0002000BB4F4E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalSprite.swift; path = Sprite/GoalSprite.swift; sourceTree = "<group>"; };
 		4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Math.swift"; path = "Extensions/CGVector+Math.swift"; sourceTree = "<group>"; };
 		4D965FAF1BB99779006B15AE /* CGPoint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Convenience.swift"; path = "Extensions/CGPoint+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +109,10 @@
 		4D337D941BB851AB0078D96C /* AppleTVPong */ = {
 			isa = PBXGroup;
 			children = (
+				4D72862D1BC0176600BB4F4E /* Sprites */,
 				4D965FAC1BB988C5006B15AE /* Extensions */,
 				4D337D951BB851AB0078D96C /* AppDelegate.swift */,
+				4D72862B1BC0002000BB4F4E /* Constants.swift */,
 				4D337D971BB851AB0078D96C /* GameScene.sks */,
 				4D337D991BB851AB0078D96C /* GameScene.swift */,
 				4D337D9B1BB851AB0078D96C /* GameViewController.swift */,
@@ -134,6 +140,14 @@
 				4D337DBA1BB851AB0078D96C /* Info.plist */,
 			);
 			path = AppleTVPongUITests;
+			sourceTree = "<group>";
+		};
+		4D72862D1BC0176600BB4F4E /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */,
+			);
+			name = Sprites;
 			sourceTree = "<group>";
 		};
 		4D965FAC1BB988C5006B15AE /* Extensions */ = {
@@ -278,9 +292,11 @@
 			files = (
 				4D337D9A1BB851AB0078D96C /* GameScene.swift in Sources */,
 				4D965FB01BB99779006B15AE /* CGPoint+Convenience.swift in Sources */,
+				4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */,
 				4D337D9C1BB851AB0078D96C /* GameViewController.swift in Sources */,
 				4D337D961BB851AB0078D96C /* AppDelegate.swift in Sources */,
 				4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */,
+				4D72862C1BC0002000BB4F4E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

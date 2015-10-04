@@ -8,34 +8,69 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player1: SKSpriteNode!
     var player2: SKSpriteNode!
+    //var topBar: SKSpriteNode!
+    //var bottomBar:SKSpriteNode!
     var ball: SKSpriteNode!
     var initialTouch:CGPoint!
     
-    let boundaryHeight:CGFloat = 60
     
-    override func didMoveToView(view: SKView) {
-        
-        initialTouch = view.frame.origin
+    let boundaryHeight:CGFloat = 60
+   
+    override func didMoveToView(view: SKView){
+        self.physicsWorld.contactDelegate = self
+        connectOutlets()
+        createSceneContent(view)
+        createBall()
+    }
+    
+    func connectOutlets() {
         player1 = self.childNodeWithName("Player1") as! SKSpriteNode
         player2 = self.childNodeWithName("Player2") as! SKSpriteNode
-        ball = self.childNodeWithName("Ball") as! SKSpriteNode
+    }
+    
+    func createBall() {
+        ball = SKSpriteNode(imageNamed: "40Dot")
+        ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
+        
+        ball.physicsBody?.velocity = CGVectorMake(950, 250)
+        ball.physicsBody?.usesPreciseCollisionDetection = true
+        ball.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Ball
+        ball.physicsBody?.collisionBitMask = Constants.PhysicsCategory.Bar | Constants.PhysicsCategory.Player2
+        ball.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Bar
+        //ball.physicsBody?.dynamic = true
+        ball.zPosition = 10
+        addChild(ball)
+        ball.physicsBody?.applyImpulse(CGVectorMake(950, 250))
+    }
+    
+    func createSceneContent(view: SKView) {
+        
+        
+        initialTouch = view.frame.origin
+
+        
+        //topBar = self.childNodeWithName("TopBar") as! SKSpriteNode
+        //bottomBar = self.childNodeWithName("BottomBar") as! SKSpriteNode
+        
         
         //ball.physicsBody!.applyImpulse(CGVectorMake(1000, -10))
-        ball.physicsBody?.velocity = CGVectorMake(1550, 250)
-        ball.physicsBody?.usesPreciseCollisionDetection = true
+//        let borderBody = SKPhysicsBody(edgeLoopFromRect: frame)
+//        borderBody.usesPreciseCollisionDetection = true
+//        borderBody.friction = 0
+//        self.physicsBody = borderBody
+//        
+        let leftGoal = GoalSprite(goalType: .Left, screenSize: frame.size)
+        let rightGoal = GoalSprite(goalType: .Right, screenSize: frame.size)
         
+       
+        addChild(leftGoal)
+        addChild(rightGoal)
+       
         
-        let borderBody = SKPhysicsBody(edgeLoopFromRect: frame)
-        borderBody.usesPreciseCollisionDetection = true
-        borderBody.friction = 0
-        self.physicsBody = borderBody
-        
-        
-
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -68,6 +103,67 @@ class GameScene: SKScene {
         
         
     }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.Bar != 0)) {
+                
+                //ball.physicsBody?.applyImpulse(CGVectorMake(150, 50))
+                
+                let strength = 1.0 * (ball.position.x < frame.width / 2 ? 1 : -1)
+                let body = ball.physicsBody!
+                body.applyImpulse(CGVector(dx: strength, dy: 0))
+                
+                
+                guard let ballBody = ball.physicsBody else {
+                    return
+                }
+        } else {
+            
+        }
+       if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.Goal != 0)) {
+                
+                //print("restart game")
+                
+                self.restartGame()
+        }
+        
+        
+    
+    }
+    
+    
+    func restartGame() {
+        self.removeAllChildren()
+        self.removeAllActions()
+        
+        guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
+                return
+            }
+        
+        view?.presentScene(scene, transition: SKTransition.fadeWithDuration(0.5))
+        
+        return
+        
+        if let view = self.view {
+            self.createSceneContent(view)
+        }
+    }
+    
+    
+    
     
     func determinant(a a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> CGFloat {
         
