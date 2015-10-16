@@ -16,6 +16,7 @@
 		4D337DA31BB851AB0078D96C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D337DA21BB851AB0078D96C /* Assets.xcassets */; };
 		4D337DAE1BB851AB0078D96C /* AppleTVPongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DAD1BB851AB0078D96C /* AppleTVPongTests.swift */; };
 		4D337DB91BB851AB0078D96C /* AppleTVPongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */; };
+		4D6613371BD15631005FB2C5 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6613361BD15631005FB2C5 /* Ball.swift */; };
 		4D72862C1BC0002000BB4F4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862B1BC0002000BB4F4E /* Constants.swift */; };
 		4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */; };
 		4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */; };
@@ -55,6 +56,7 @@
 		4D337DB41BB851AB0078D96C /* AppleTVPongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleTVPongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVPongUITests.swift; sourceTree = "<group>"; };
 		4D337DBA1BB851AB0078D96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D6613361BD15631005FB2C5 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = Sprite/Ball.swift; sourceTree = "<group>"; };
 		4D72862B1BC0002000BB4F4E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalSprite.swift; path = Sprite/GoalSprite.swift; sourceTree = "<group>"; };
 		4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Math.swift"; path = "Extensions/CGVector+Math.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */,
+				4D6613361BD15631005FB2C5 /* Ball.swift */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6613371BD15631005FB2C5 /* Ball.swift in Sources */,
 				4D337D9A1BB851AB0078D96C /* GameScene.swift in Sources */,
 				4D965FB01BB99779006B15AE /* CGPoint+Convenience.swift in Sources */,
 				4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */,

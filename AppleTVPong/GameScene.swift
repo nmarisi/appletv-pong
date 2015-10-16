@@ -34,19 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBall() {
-        ball = SKSpriteNode(imageNamed: "40Dot")
-        ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
-       ball.physicsBody = SKPhysicsBody(rectangleOfSize: ball.size)
-        ball.physicsBody?.allowsRotation = false
-        ball.physicsBody?.friction = 0
-        ball.physicsBody?.linearDamping = 0
-        ball.physicsBody?.angularDamping = 0
-        ball.physicsBody?.velocity = CGVectorMake(1250, 450)
-        ball.physicsBody?.usesPreciseCollisionDetection = true
-        ball.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Ball
-        ball.physicsBody?.collisionBitMask = Constants.PhysicsCategory.Bar | Constants.PhysicsCategory.Player2
-        ball.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Bar
-        //ball.physicsBody?.dynamic = true
+        ball = Ball(velocity: CGVectorMake(1250, 450))
         ball.zPosition = 10
         addChild(ball)
     }
