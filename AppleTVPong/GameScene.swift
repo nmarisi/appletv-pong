@@ -37,7 +37,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball = SKSpriteNode(imageNamed: "40Dot")
         ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
        ball.physicsBody = SKPhysicsBody(rectangleOfSize: ball.size)
-        ball.physicsBody?.velocity = CGVectorMake(950, 250)
+        ball.physicsBody?.allowsRotation = false
+        ball.physicsBody?.friction = 0
+        ball.physicsBody?.linearDamping = 0
+        ball.physicsBody?.angularDamping = 0
+        ball.physicsBody?.velocity = CGVectorMake(1250, 450)
         ball.physicsBody?.usesPreciseCollisionDetection = true
         ball.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Ball
         ball.physicsBody?.collisionBitMask = Constants.PhysicsCategory.Bar | Constants.PhysicsCategory.Player2
@@ -135,8 +139,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
             (secondBody.categoryBitMask & Constants.PhysicsCategory.Goal != 0)) {
                 
-                //print("restart game")
-                
                 self.restartGame()
         }
         
@@ -146,6 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func restartGame() {
+        
         self.removeAllChildren()
         self.removeAllActions()
         
@@ -230,7 +233,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if let intersection = intersectionSeg1Seg2(p1: p1, p2: p2, p3: p3, p4: p4) {
             
-            let newPosition = CGPointMake(player2.position.x, abs(intersection.y))
             movePlayer(player2, yLocation: abs(intersection.y), animated: true)
             
          } else {
@@ -251,7 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let moveLocation = CGPointMake(player.position.x, yLocation)
         
         if animated {
-            let moveAction = SKAction.moveTo(moveLocation, duration: 0.2)
+            let moveAction = SKAction.moveTo(moveLocation, duration: 0.1)
             player.runAction(moveAction)
         } else {
             player.position = moveLocation
