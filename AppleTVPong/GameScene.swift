@@ -12,17 +12,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player1: SKSpriteNode!
     var player2: SKSpriteNode!
-    //var topBar: SKSpriteNode!
-    //var bottomBar:SKSpriteNode!
     var ball: SKSpriteNode!
     var initialTouch:CGPoint!
     
     
     let boundaryHeight:CGFloat = 60
    
-    override func didMoveToView(view: SKView){
+    override func didMoveToView(view: SKView) {
+        
         self.physicsWorld.contactDelegate = self
-      physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         connectOutlets()
         createSceneContent(view)
         createBall()
@@ -44,17 +43,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         initialTouch = view.frame.origin
 
-        
-        //topBar = self.childNodeWithName("TopBar") as! SKSpriteNode
-        //bottomBar = self.childNodeWithName("BottomBar") as! SKSpriteNode
-        
-        
-        //ball.physicsBody!.applyImpulse(CGVectorMake(1000, -10))
-//        let borderBody = SKPhysicsBody(edgeLoopFromRect: frame)
-//        borderBody.usesPreciseCollisionDetection = true
-//        borderBody.friction = 0
-//        self.physicsBody = borderBody
-//        
         let leftGoal = GoalSprite(goalType: .Left, screenSize: frame.size)
         let rightGoal = GoalSprite(goalType: .Right, screenSize: frame.size)
         
