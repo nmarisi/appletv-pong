@@ -16,6 +16,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var initialTouch:CGPoint!
     var player1Score = 0
     var player2Score = 2
+    var player1ScoreLabel: SKLabelNode!
+    var player2ScoreLabel: SKLabelNode!
+    
     
     
     let boundaryHeight:CGFloat = 60
@@ -32,20 +35,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func connectOutlets() {
         player1 = self.childNodeWithName("Player1") as! SKSpriteNode
         player2 = self.childNodeWithName("Player2") as! SKSpriteNode
+        player1ScoreLabel = self.childNodeWithName("Player1Score") as! SKLabelNode
+        player2ScoreLabel = self.childNodeWithName("Player2Score") as! SKLabelNode
     }
     
     func createBall() {
-        //ball = SKSpriteNode(imageNamed: "40Dot")
         ball = Ball(velocity: CGVectorMake(1250, 450))
         ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
         ball.zPosition = 10
         addChild(ball)
     }
     
-
     
     func createSceneContent(view: SKView) {
-        
         
         initialTouch = view.frame.origin
 
@@ -103,104 +105,55 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
             (secondBody.categoryBitMask & Constants.PhysicsCategory.Bar != 0)) {
                 
-                //ball.physicsBody?.applyImpulse(CGVectorMake(150, 50))
                 
+                // This change in impulse is used to stop the ball from getting 'glued' to the boarders.
                 let strength = 1.0 * (ball.position.x < frame.width / 2 ? 1 : -1)
                 let body = ball.physicsBody!
                 body.applyImpulse(CGVector(dx: strength, dy: 0))
                 
-                
-                guard let ballBody = ball.physicsBody else {
-                    return
-                }
-        } else {
-            
         }
-       if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
-            (secondBody.categoryBitMask & Constants.PhysicsCategory.Goals
-                != 0)) {
+        
+        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.RightGoal != 0)) {
                 
-                // TODO: Keep track of score here
-                // Probably change physics category to differentiate each goal
-                // Then update score label
-                // Sve score?
+                player2Score += 1
+                player2ScoreLabel.text = "\(player2Score)"
+                self.restartGame()
                 
+        } else if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.LeftGoal != 0)) {
                 
+                player1Score += 1
+                player1ScoreLabel.text = "\(player1Score)"
                 self.restartGame()
         }
         
+       
+        
+        
         
     
+    }
+    
+    
+    func checkForWin() {
+        
+        if player1Score >= Constants.winningScore {
+            print("player 1 won")
+            
+            
+        } else if player2Score >= Constants.winningScore {
+            print("player 2 won")
+            
+        }
     }
     
     
     func restartGame() {
         
-        self.removeAllChildren()
+        self.removeChildrenInArray([ball])
         self.removeAllActions()
-        
-        guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
-                return
-            }
-        
-        view?.presentScene(scene, transition: SKTransition.fadeWithDuration(0.5))
-        
-        return
-        
-        if let view = self.view {
-            self.createSceneContent(view)
-        }
-    }
-    
-    
-    
-    
-    func determinant(a a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> CGFloat {
-        
-        return a * d - b * c
-    }
-    
-    // Note: Four our purposes we don't care if lines are parallel or do not intersec
-    func intersectionSeg1Seg2(p1 p1: CGPoint, p2: CGPoint, p3: CGPoint, p4: CGPoint) -> CGPoint? {
-
-        let d1 = determinant(a: p1.x, b: p1.y, c: p2.x, d: p2.y)
-        let d2 = determinant(a: p1.x, b: 1, c: p2.x, d: 1)
-        let d3 = determinant(a: p3.x, b: p3.y, c: p4.x, d: p4.y)
-        let d4 = determinant(a: p3.x, b: 1, c: p4.x, d: 1)
-
-        let upperFinalDet =  determinant(a: d1, b: d2, c:d3, d: d4)
-        
-        
-        let d5 = determinant(a: p1.x, b: 1, c: p2.x, d: 1)
-        let d6 = determinant(a: p1.y, b: 1, c: p2.y, d: 1)
-        let d7 = determinant(a: p3.x, b: 1, c: p4.x, d: 1)
-        let d8 = determinant(a: p3.y, b: 1, c: p4.y, d: 1)
-        
-        let lowerFinalDet = determinant(a: d5, b: d6, c: d7, d: d8)
-        
-        // §finally calculate the X intersection point
-        let xIntersec = upperFinalDet / lowerFinalDet
-        
-        /* do a similar thing for the Y coord */
-        let dd1 = determinant(a: p1.x, b: p1.y, c: p2.x, d: p2.y)
-        let dd2 = determinant(a: p1.y, b: 1, c: p2.y, d: 1) 
-        let dd3 = determinant(a: p3.x, b: p3.y, c: p4.x, d: p4.y) 
-        let dd4 = determinant(a: p3.y, b: 1, c: p4.y, d: 1) 
-        
-        let upperFinalDeterminant = determinant(a: dd1, b: dd2, c: dd3, d: dd4) 
-        
-        let dd5 = determinant(a: p1.x, b: 1, c: p2.x, d: 1) 
-        let dd6 = determinant(a: p1.y, b: 1, c: p2.y, d: 1) 
-        let dd7 = determinant(a: p3.x, b: 1, c: p4.x, d: 1) 
-        let dd8 = determinant(a: p3.y, b: 1, c: p4.y, d: 1) 
-        
-        let lowerFinalDeterminant = determinant(a: dd5, b: dd6, c: dd7, d: dd8)
-        
-        // calc final Y point
-        let yIntersec = upperFinalDeterminant / lowerFinalDeterminant
-
-        return CGPointMake(xIntersec, yIntersec)
-        
+        self.createBall()
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -225,6 +178,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
          } else {
             //infinite, so no intersection.
         }
+        
+        checkForWin()
     }
     
     //MARK: Convenience functions
@@ -235,8 +190,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 return
         }
         
-        //print("yLocation: \(yLocation)")
-
         let moveLocation = CGPointMake(player.position.x, yLocation)
         
         if animated {
