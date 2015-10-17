@@ -14,6 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player2: SKSpriteNode!
     var ball: SKSpriteNode!
     var initialTouch:CGPoint!
+    var player1Score = 0
+    var player2Score = 2
     
     
     let boundaryHeight:CGFloat = 60
@@ -49,8 +51,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        
         addChild(leftGoal)
         addChild(rightGoal)
-       
-        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -114,6 +114,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
             (secondBody.categoryBitMask & Constants.PhysicsCategory.Goal != 0)) {
+                
+                // TODO: Keep track of score here
+                // Probably change physics category to differentiate each goal
+                // Then update score label
+                // Sve score?
+                
                 
                 self.restartGame()
         }
