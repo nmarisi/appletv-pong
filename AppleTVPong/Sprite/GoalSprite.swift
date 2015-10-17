@@ -31,14 +31,15 @@ class GoalSprite: SKSpriteNode {
         if goalType == .Left {
             self.physicsBody = SKPhysicsBody(edgeFromPoint: bottomLeft , toPoint: topLeft)
             self.position = CGPointMake(0, screenSize.height / 2)
+            self.physicsBody?.categoryBitMask = Constants.PhysicsCategory.LeftGoal
         } else { //.Right
             self.physicsBody = SKPhysicsBody(edgeFromPoint: bottomRight, toPoint: topRight)
             self.position = CGPointMake(bottomRight.x, screenSize.height / 2)
+            self.physicsBody?.categoryBitMask = Constants.PhysicsCategory.RightGoal
         }
         
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
         self.zPosition = 100
-        self.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Goal
         self.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Ball
         self.physicsBody?.collisionBitMask = Constants.PhysicsCategory.Ball
         self.physicsBody?.usesPreciseCollisionDetection = true

@@ -35,10 +35,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBall() {
+        //ball = SKSpriteNode(imageNamed: "40Dot")
         ball = Ball(velocity: CGVectorMake(1250, 450))
+        ball.position = CGPointMake(frame.width / 2 + 100, frame.height / 2)
         ball.zPosition = 10
         addChild(ball)
     }
+    
+
     
     func createSceneContent(view: SKView) {
         
@@ -113,7 +117,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
-            (secondBody.categoryBitMask & Constants.PhysicsCategory.Goal != 0)) {
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.Goals
+                != 0)) {
                 
                 // TODO: Keep track of score here
                 // Probably change physics category to differentiate each goal

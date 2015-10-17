@@ -12,8 +12,6 @@ class Ball: SKSpriteNode {
     
     convenience init(velocity: CGVector) {
         self.init(imageNamed: "40Dot")
-        
-        self.position = CGPointMake(frame.width / 2, frame.height / 2)
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.friction = 0
@@ -26,3 +24,5 @@ class Ball: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Bar
     }
  }
+
+

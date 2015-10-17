@@ -20,7 +20,9 @@ public struct Constants {
         static let Player2    : UInt32 = 1 << 1// 2
         static let Ball       : UInt32 = 1 << 2// 4
         static let Bar        : UInt32 = 1 << 3// 8
-        static let Goal       : UInt32 = 1 << 4// 16
+        static let LeftGoal   : UInt32 = 1 << 4// 16
+        static let RightGoal  : UInt32 = 1 << 5// 16
+        static let Goals      : UInt32 = LeftGoal | RightGoal // Both goals
     }
     
 }
