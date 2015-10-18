@@ -196,10 +196,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let moveAction = SKAction.moveTo(moveLocation, duration: 0.1)
             player.runAction(moveAction)
         } else {
-            player.position = moveLocation
+            
+            let speed:CGFloat = 50000
+            let time = moveLocation.y / speed
+            player.removeAllActions()
+            let moveAction =  SKAction.moveTo(moveLocation, duration: Double(time))
+            moveAction.timingMode = .EaseOut
+            player.runAction(moveAction)
+            //player.position = moveLocation
         }
         
         
     }
-    
+
+    func moveAction() {
+        let speed = 100
+        
+        
+    }
 }
