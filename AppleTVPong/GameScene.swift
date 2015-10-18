@@ -20,7 +20,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player2ScoreLabel: SKLabelNode!
     
     
-    
     let boundaryHeight:CGFloat = 60
    
     override func didMoveToView(view: SKView) {
@@ -30,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         connectOutlets()
         createSceneContent(view)
         createBall()
+        addGestureRecogniser()
     }
     
     func connectOutlets() {
@@ -46,8 +46,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(ball)
     }
     
+    func addGestureRecogniser() {
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "userPanned:")
+        view!.addGestureRecognizer(panGestureRecognizer)
+    }
     
-    func createSceneContent(view: SKView) {
+    /*
+    
+    func userPanned(panGestureRecognizer : UIPanGestureRecognizer) {
+        
+        let translation = panGestureRecognizer.translationInView(self.view)
+        let player1Y = player1.position.y - (translation.y * 0.5)
+        
+        print("translation: \(translation)")
+        
+        //if (panGestureRecognizer.state == .Changed) {
+            player1.removeAllActions()
+            let moveAction =  SKAction.moveTo(CGPointMake(player1.position.x, player1Y), duration: 0.1) // Double(time))
+            moveAction.timingMode = .EaseOut
+            player1.runAction(moveAction)
+        //}
+    }
+    */
+   
+   func createSceneContent(view: SKView) {
         
         initialTouch = view.frame.origin
 
@@ -58,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(leftGoal)
         addChild(rightGoal)
     }
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -85,9 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-       
-        
-        
+
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -127,12 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player1ScoreLabel.text = "\(player1Score)"
                 self.restartGame()
         }
+        checkForWin()
         
-       
-        
-        
-        
-    
     }
     
     
@@ -179,7 +197,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //infinite, so no intersection.
         }
         
-        checkForWin()
     }
     
     //MARK: Convenience functions
@@ -197,10 +214,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.runAction(moveAction)
         } else {
             
-            let speed:CGFloat = 50000
+            let speed:CGFloat = 5000
             let time = moveLocation.y / speed
             player.removeAllActions()
-            let moveAction =  SKAction.moveTo(moveLocation, duration: Double(time))
+            let moveAction =  SKAction.moveTo(moveLocation, duration: 0.1) // Double(time))
             moveAction.timingMode = .EaseOut
             player.runAction(moveAction)
             //player.position = moveLocation
