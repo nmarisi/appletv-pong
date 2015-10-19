@@ -17,6 +17,7 @@ class GameOverScene: SKScene {
         super.didMoveToView(view)
         
         connectOutlets()
+        updateScore()
     
     }
     
@@ -35,8 +36,8 @@ class GameOverScene: SKScene {
             return
         }
         
-        player1ScoreLabel.text = "\(player1Score)"
-        player2ScoreLabel.text = "\(player2Score)"
+        player1ScoreLabel.text = "You: \(player1Score)"
+        player2ScoreLabel.text = "Computer: \(player2Score)"
   
         
     }

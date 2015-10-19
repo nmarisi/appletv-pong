@@ -18,8 +18,8 @@
 		4D337DB91BB851AB0078D96C /* AppleTVPongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */; };
 		4D6613371BD15631005FB2C5 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6613361BD15631005FB2C5 /* Ball.swift */; };
 		4D6613391BD2BA43005FB2C5 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6613381BD2BA43005FB2C5 /* MathUtils.swift */; };
-		4D66135D1BD45116005FB2C5 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D66135C1BD45116005FB2C5 /* GameOverScene.sks */; };
 		4D66135F1BD45137005FB2C5 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66135E1BD45137005FB2C5 /* GameOverScene.swift */; };
+		4D6613601BD5AC93005FB2C5 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D66135C1BD45116005FB2C5 /* GameOverScene.sks */; };
 		4D72862C1BC0002000BB4F4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862B1BC0002000BB4F4E /* Constants.swift */; };
 		4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */; };
 		4D965FAE1BB988FA006B15AE /* CGVector+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */; };
@@ -285,7 +285,7 @@
 				4D337DA11BB851AB0078D96C /* Main.storyboard in Resources */,
 				4D337D981BB851AB0078D96C /* GameScene.sks in Resources */,
 				4D337DA31BB851AB0078D96C /* Assets.xcassets in Resources */,
-				4D66135D1BD45116005FB2C5 /* GameOverScene.sks in Resources */,
+				4D6613601BD5AC93005FB2C5 /* GameOverScene.sks in Resources */,
 				4D337D9E1BB851AB0078D96C /* Game.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
