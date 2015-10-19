@@ -28,6 +28,17 @@ class GameOverScene: SKScene {
     
     func updateScore() {
         
+        guard let data = userData,
+                  player1Score = data[Constants.CommonKeys.player1Score],
+                  player2Score = data[Constants.CommonKeys.player2Score]
+                  else {
+            return
+        }
+        
+        player1ScoreLabel.text = "\(player1Score)"
+        player2ScoreLabel.text = "\(player2Score)"
+  
+        
     }
     
 

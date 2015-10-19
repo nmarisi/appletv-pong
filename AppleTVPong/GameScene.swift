@@ -156,14 +156,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func checkForWin() {
         
-        if player1Score >= Constants.winningScore {
-            print("player 1 won")
+  
+        if player1Score >= Constants.winningScore  {
+            loadWinningScene()
             
             
         } else if player2Score >= Constants.winningScore {
-            print("player 2 won")
+            loadWinningScene()
             
         }
+    }
+    
+    
+    func loadWinningScene() {
+        guard let scene = SKScene(fileNamed: "GameOverScene") as? GameOverScene else {
+            return
+        }
+        
+        scene.userData = [
+            Constants.CommonKeys.player1Score: player1Score,
+            Constants.CommonKeys.player2Score: player2Score
+        ]
+        
+        let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+        self.view?.presentScene(scene, transition:reveal)
+        
     }
     
     
