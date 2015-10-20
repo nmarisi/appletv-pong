@@ -232,13 +232,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.runAction(moveAction)
         } else {
             
+            /*
+            
             let speed:CGFloat = 5000
             let time = moveLocation.y / speed
             player.removeAllActions()
             let moveAction =  SKAction.moveTo(moveLocation, duration: 0.1) // Double(time))
             moveAction.timingMode = .EaseOut
             player.runAction(moveAction)
-            //player.position = moveLocation
+*/
+            
+            player.position = moveLocation
         }
         
         
