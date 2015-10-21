@@ -12,7 +12,7 @@ import SpriteKit
 public struct Constants {
 
     static let boundaryHeight:CGFloat = 60
-    static let winningScore = 1
+    static let winningScore = 10
     
     struct PhysicsCategory {
         static let None       : UInt32 = 0
@@ -29,5 +29,10 @@ public struct Constants {
     struct CommonKeys {
         static let player1Score = "player1Score"
         static let player2Score = "player2Score"
+    }
+    
+    struct Scenes {
+        static let GameScene = "GameScene"
+        static let GameOverScene = "GameOverScene"
     }
 }

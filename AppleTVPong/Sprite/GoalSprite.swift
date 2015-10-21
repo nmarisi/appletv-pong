@@ -21,7 +21,7 @@ class GoalSprite: SKSpriteNode {
         
         self.size = CGSizeMake(10, screenSize.height)
         //self.anchorPoint = CGPointMake(0, 0)
-        self.color = UIColor.redColor()
+        //self.color = UIColor.redColor()
         
         let topLeft = CGPointMake(0, screenSize.height - Constants.boundaryHeight)
         let bottomLeft = CGPointMake(0, Constants.boundaryHeight)

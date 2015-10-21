@@ -15,7 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ball: SKSpriteNode!
     var initialTouch:CGPoint!
     var player1Score = 0
-    var player2Score = 2
+    var player2Score = 0
     var player1ScoreLabel: SKLabelNode!
     var player2ScoreLabel: SKLabelNode!
     
@@ -29,7 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         connectOutlets()
         createSceneContent(view)
         createBall()
-        addGestureRecogniser()
+        //addGestureRecogniser()
     }
     
     func connectOutlets() {
@@ -169,7 +169,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func loadWinningScene() {
-        guard let scene = SKScene(fileNamed: "GameOverScene") as? GameOverScene else {
+        
+        guard let scene = SKScene(fileNamed: Constants.Scenes.GameOverScene) as? GameOverScene else {
             return
         }
         

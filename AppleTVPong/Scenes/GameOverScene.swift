@@ -18,8 +18,29 @@ class GameOverScene: SKScene {
         
         connectOutlets()
         updateScore()
+        addTapRecognizer()
+    
     
     }
+    
+    func addTapRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "selectOrMenuTapped:")
+        tapGestureRecognizer.allowedPressTypes = [
+            NSNumber(integer: UIPressType.Select.rawValue),
+            NSNumber(integer: UIPressType.Menu.rawValue)
+        ];
+        
+        guard let view = self.view else {
+            return
+        }
+        
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func selectOrMenuTapped(tapGestureRecognizer : UITapGestureRecognizer) {
+        loadGameScene()
+    }
+    
     
     func connectOutlets() {
         player1ScoreLabel = childNodeWithName("Player1ScoreLabel") as! SKLabelNode
@@ -40,6 +61,17 @@ class GameOverScene: SKScene {
         player2ScoreLabel.text = "Computer: \(player2Score)"
   
         
+    }
+    
+    func loadGameScene() {
+        
+        guard let scene = SKScene(fileNamed: Constants.Scenes.GameScene) as? GameScene else {
+            return
+        }
+        
+        let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+        self.view?.presentScene(scene, transition:reveal)
+  
     }
     
 
