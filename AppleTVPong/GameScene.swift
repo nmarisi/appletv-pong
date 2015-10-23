@@ -244,13 +244,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             player.position = moveLocation
         }
-        
-        
-    }
-
-    func moveAction() {
-        let speed = 100
-        
-        
     }
 }
