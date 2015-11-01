@@ -18,7 +18,6 @@
 		4D337DB91BB851AB0078D96C /* AppleTVPongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D337DB81BB851AB0078D96C /* AppleTVPongUITests.swift */; };
 		4D6613371BD15631005FB2C5 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6613361BD15631005FB2C5 /* Ball.swift */; };
 		4D6613391BD2BA43005FB2C5 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6613381BD2BA43005FB2C5 /* MathUtils.swift */; };
-		4D66135F1BD45137005FB2C5 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66135E1BD45137005FB2C5 /* GameOverScene.swift */; };
 		4D6613601BD5AC93005FB2C5 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D66135C1BD45116005FB2C5 /* GameOverScene.sks */; };
 		4D72862C1BC0002000BB4F4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862B1BC0002000BB4F4E /* Constants.swift */; };
 		4D72862F1BC0177D00BB4F4E /* GoalSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */; };
@@ -62,7 +61,6 @@
 		4D6613361BD15631005FB2C5 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = Sprite/Ball.swift; sourceTree = "<group>"; };
 		4D6613381BD2BA43005FB2C5 /* MathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		4D66135C1BD45116005FB2C5 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameOverScene.sks; path = Scenes/GameOverScene.sks; sourceTree = "<group>"; };
-		4D66135E1BD45137005FB2C5 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = Scenes/GameOverScene.swift; sourceTree = "<group>"; };
 		4D72862B1BC0002000BB4F4E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D72862E1BC0177D00BB4F4E /* GoalSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalSprite.swift; path = Sprite/GoalSprite.swift; sourceTree = "<group>"; };
 		4D965FAD1BB988FA006B15AE /* CGVector+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGVector+Math.swift"; path = "Extensions/CGVector+Math.swift"; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				4D337D971BB851AB0078D96C /* GameScene.sks */,
 				4D337D991BB851AB0078D96C /* GameScene.swift */,
 				4D66135C1BD45116005FB2C5 /* GameOverScene.sks */,
-				4D66135E1BD45137005FB2C5 /* GameOverScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D66135F1BD45137005FB2C5 /* GameOverScene.swift in Sources */,
 				4D6613391BD2BA43005FB2C5 /* MathUtils.swift in Sources */,
 				4D6613371BD15631005FB2C5 /* Ball.swift in Sources */,
 				4D337D9A1BB851AB0078D96C /* GameScene.swift in Sources */,
@@ -451,7 +447,7 @@
 		4D337DBE1BB851AB0078D96C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS Icons";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS-icons";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppleTVPong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -464,7 +460,7 @@
 		4D337DBF1BB851AB0078D96C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS Icons";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS-icons";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppleTVPong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
