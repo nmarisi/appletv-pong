@@ -21,7 +21,7 @@ class Ball: SKSpriteNode {
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.categoryBitMask = Constants.PhysicsCategory.Ball
         self.physicsBody?.collisionBitMask = Constants.PhysicsCategory.Bar | Constants.PhysicsCategory.Player2
-        self.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Bar
+        self.physicsBody?.contactTestBitMask = Constants.PhysicsCategory.Bar | Constants.PhysicsCategory.Player1 | Constants.PhysicsCategory.Player2
     }
  }
 

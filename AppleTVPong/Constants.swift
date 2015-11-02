@@ -24,6 +24,7 @@ public struct Constants {
         static let LeftGoal   : UInt32 = 1 << 4// 16
         static let RightGoal  : UInt32 = 1 << 5// 16
         static let Goals      : UInt32 = LeftGoal | RightGoal // Both goals
+        static let Players    : UInt32 = Player1 | Player2
     }
     
     struct CommonKeys {

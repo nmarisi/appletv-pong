@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -19,7 +20,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player1ScoreLabel: SKLabelNode!
     var player2ScoreLabel: SKLabelNode!
     
-    
+    let bipAudioPlayer = AVAudioPlayer.audioPlayerForMP3("bip")
+    let goalAudioPlayer = AVAudioPlayer.audioPlayerForMP3("goal")
+
     let boundaryHeight:CGFloat = 60
    
     override func didMoveToView(view: SKView) {
@@ -29,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         connectOutlets()
         createSceneContent(view)
         createBall()
+        
         //addGestureRecogniser()
     }
     
@@ -135,6 +139,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
         }
         
+        if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Players != 0) &&
+            (secondBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0)) {
+                
+                bipAudioPlayer?.play()
+        }
+
+        
+        
         if ((firstBody.categoryBitMask & Constants.PhysicsCategory.Ball != 0) &&
             (secondBody.categoryBitMask & Constants.PhysicsCategory.RightGoal != 0)) {
                 
@@ -187,6 +199,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func restartGame() {
         
+        goalAudioPlayer?.play()
         self.removeChildrenInArray([ball])
         self.removeAllActions()
         self.createBall()
@@ -228,7 +241,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let moveLocation = CGPointMake(player.position.x, yLocation)
         
         if animated {
-            let moveAction = SKAction.moveTo(moveLocation, duration: 0.1)
+            let moveAction = SKAction.moveTo(moveLocation, duration: 0.25)
             player.runAction(moveAction)
         } else {
             
